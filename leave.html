@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application for Leave - MGB X</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            font-size: 11px;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-container {
+            background-color: white;
+            width: 850px;
+            border: 2px solid #000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: #e5e5e5;
+            padding: 10px;
+            border-bottom: 1px solid #999;
+        }
+
+        .form-info {
+            font-size: 10px;
+        }
+
+
+        /* Header Layout: Logos near the text */
+        .form-header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Keeps logos tucked near the text */
+            padding: 10px;
+            border-bottom: 2px solid #000;
+            text-align: center;
+            gap: 20px; /* Adjust this to move logos closer or further */
+        }
+
+        .logo-img {
+            width: 65px;
+            height: auto;
+        }
+
+        .header-text p { margin: 1px 0; font-size: 10px; }
+        .header-text h3 { margin: 4px 0; font-size: 12px; font-weight: bold; }
+        .form-title { 
+            margin-top: 10px; 
+            font-size: 18px; 
+            font-weight: bold; 
+            text-decoration: underline; 
+        }
+
+        /* Grid System */
+        .row { display: flex; width: 100%; border-bottom: 1px solid #000; }
+        .cell { padding: 5px; border-right: 1px solid #000; box-sizing: border-box; }
+        .cell:last-child { border-right: none; }
+
+        /* Widths */
+        .w-25 { width: 25%; }
+        .w-33 { width: 33.33%; }
+        .w-50 { width: 50%; }
+        .w-66 { width: 66.66%; }
+
+        label { font-weight: bold; display: block; margin-bottom: 4px; font-size: 9px; text-transform: uppercase; }
+        .value { font-weight: bold; text-transform: uppercase; font-size: 11px; }
+
+        .name-grid { display: flex; text-align: center; }
+        .name-grid div { flex: 1; }
+        .name-grid span { font-size: 8px; font-style: italic; display: block; }
+
+        .section-title {
+            background-color: #f2f2f2;
+            text-align: center;
+            font-weight: bold;
+            padding: 4px;
+            border-bottom: 1px solid #000;
+        }
+
+        /* Form Content */
+        .checklist { list-style: none; padding: 0; margin: 5px 0; }
+        .checklist li { margin-bottom: 4px; display: flex; align-items: center; }
+        .sub-label { font-style: italic; margin: 8px 0 4px 0; font-weight: bold; }
+        .line { border-bottom: 1px solid black; flex-grow: 1; margin-left: 8px; height: 12px; min-width: 50px; }
+
+        /* Credits Table */
+        .credits-table { width: 100%; border-collapse: collapse; margin-top: 5px; }
+        .credits-table th, .credits-table td { border: 1px solid #000; padding: 3px; text-align: center; font-size: 10px; }
+
+        .signature-area { margin-top: 25px; text-align: center; }
+        .sig-line { border-top: 1px solid black; width: 85%; margin: 5px auto 0; font-weight: bold; font-size: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+
+    <!-- Top Header -->
+    <div class="top-bar">
+        <div class="form-info">
+            <strong>Civil Service Form No. 6</strong><br>
+            <em>Revised 2020</em>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <header class="form-header">
+            <img src="mgb.png" alt="DENR Logo" class="logo-img">
+            
+            <div class="header-text">
+                <p>Republic of the Philippines</p>
+                <p>Department of Environment and Natural Resources</p>
+                <h3>MINES AND GEOSCIENCES BUREAU REGIONAL OFFICE NO. X</h3>
+                <p>DENR-X Compound, Puntod, Cagayan de Oro City</p>
+                <div class="form-title">APPLICATION FOR LEAVE</div>
+            </div>
+
+            <img src="bagong pilipinas.png" alt="Bagong Pilipinas Logo" class="logo-img">
+        </header>
+
+        <div class="row">
+            <div class="cell w-33">
+                <label>1. OFFICE/DEPARTMENT</label>
+                <div class="value"></div>
+            </div>
+            <div class="cell w-66">
+                <label>2. NAME</label>
+                <div class="name-grid">
+                    <div><span>(Last)</span><div class="value"></div></div>
+                    <div><span>(First)</span><div class="value"></div></div>
+                    <div><span>(Middle)</span><div class="value"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell w-25">
+                <label>3. DATE OF FILING</label>
+                <div class="value"></div>
+            </div>
+            <div class="cell w-50">
+                <label>4. POSITION</label>
+                <div class="value"></div>
+            </div>
+            <div class="cell w-25">
+                <label>5. SALARY</label>
+                <div class="value"></div>
+            </div>
+        </div>
+
+        <div class="section-title">6. DETAILS OF APPLICATION</div>
+        
+        <div class="row">
+            <div class="cell w-50">
+                <label>6.A TYPE OF LEAVE TO BE AVAILED OF</label>
+                <ul class="checklist">
+                    <li><input type="checkbox"> Vacation Leave</li>
+                    <li><input type="checkbox"> Mandatory/Forced Leave</li>
+                    <li><input type="checkbox"> Sick Leave</li>
+                    <li><input type="checkbox"> Maternity Leave</li>
+                    <li><input type="checkbox"> Paternity Leave</li>
+                    <li><input type="checkbox"> Special Privilege Leave</li>
+                    <li><input type="checkbox"> Solo Parent Leave</li>
+                    <li><input type="checkbox"> Study Leave</li>
+                    <li><input type="checkbox"> 10-Day VAWC Leave</li>
+                    <li><input type="checkbox"> Rehabilitation Privilege</li>
+                    <li><input type="checkbox"> Special Leave Benefits for Women</li>
+                    <li><input type="checkbox"> Special Emergency (Calamity) Leave</li>
+                    <li><input type="checkbox"> Adoption Leave</li>
+                </ul>
+                <div style="display:flex; margin-top:5px;"><span>Others:</span> <span class="line"></span></div>
+            </div>
+
+            <div class="cell w-50">
+                <label>6.B DETAILS OF LEAVE</label>
+                <p class="sub-label">In case of Vacation/Special Privilege Leave:</p>
+                <ul class="checklist">
+                    <li><input type="checkbox"> Within the Philippines <span class="line"></span></li>
+                    <li><input type="checkbox"> Abroad (Specify) <span class="line"></span></li>
+                </ul>
+
+                <p class="sub-label">In case of Sick Leave:</p>
+                <ul class="checklist">
+                    <li><input type="checkbox"> In Hospital (Specify Illness) <span class="line"></span></li>
+                    <li><input type="checkbox"> Out Patient (Specify Illness) <span class="line"></span></li>
+                </ul>
+
+                <p class="sub-label">In case of Special Leave Benefits for Women:</p>
+                <div style="display:flex;"><span>(Specify Illness)</span> <span class="line"></span></div>
+
+                <p class="sub-label">In case of Study Leave:</p>
+                <ul class="checklist">
+                    <li><input type="checkbox"> Completion of Master's Degree</li>
+                    <li><input type="checkbox"> BAR/Board Examination Review</li>
+                </ul>
+
+                <p class="sub-label">Other purpose:</p>
+                <ul class="checklist">
+                    <li><input type="checkbox"> Monetization of Leave Credits</li>
+                    <li><input type="checkbox"> Terminal Leave</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell w-50">
+                <label>6.C NUMBER OF WORKING DAYS APPLIED FOR</label>
+                <span class="line" style="display:block; margin: 10px 0;"></span>
+                <label>INCLUSIVE DATES</label>
+                <span class="line" style="display:block; margin: 10px 0;"></span>
+            </div>
+            <div class="cell w-50">
+                <label>6.D COMMUTATION</label>
+                <ul class="checklist">
+                    <li><input type="checkbox"> Not Requested</li>
+                    <li><input type="checkbox"> Requested</li>
+                </ul>
+                <div class="signature-area">
+                    <div class="sig-line" style="width: 90%;">(Signature of Applicant)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">7. DETAILS OF ACTION ON APPLICATION</div>
+        <div class="row">
+            <div class="cell w-50">
+                <label>7.A CERTIFICATION OF LEAVE CREDITS</label>
+                <p style="text-align:center;">As of _________<u></u></p>
+                <table class="credits-table">
+                    <tr><th></th><th>Vacation Leave</th><th>Sick Leave</th></tr>
+                    <tr><td>Total Earned</td><td></td><td></td></tr>
+                    <tr><td>Less this App</td><td></td><td></td></tr>
+                    <tr><td>Balance</td><td></td><td></td></tr>
+                </table>
+                <div class="signature-area">
+                    <div class="value">JOANNE ROSE A. ALVAREZ</div>
+                    <div class="sig-line">Administrative Officer V (HRMO)</div>
+                </div>
+            </div>
+            <div class="cell w-50">
+                <label>7.B RECOMMENDATION</label>
+                <ul class="checklist">
+                    <li><input type="checkbox"> For approval</li>
+                    <li><input type="checkbox"> For disapproval due to:</li>
+                </ul>
+                <span class="line" style="display:block; height: 40px; margin-top: 10px;"></span>
+            </div>
+        </div>
+
+        <div class="row" style="border-bottom:none;">
+            <div class="cell w-50">
+                <label>7.C APPROVED FOR:</label>
+                <p>___ days with pay</p>
+                <p>___ days without pay</p>
+                <p>___ others (Specify)</p>
+            </div>
+            <div class="cell w-50">
+                <label>7.D DISAPPROVED DUE TO:</label>
+                <span class="line" style="display:block; height: 20px;"></span>
+                <div class="signature-area">
+                    <div class="value">RODANTE B. FELINA</div>
+                    <div class="sig-line">OIC, REGIONAL DIRECTOR</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
